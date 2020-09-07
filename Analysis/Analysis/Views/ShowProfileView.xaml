@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Analysis.Views"
+             mc:Ignorable="d"
+             x:Class="Analysis.Views.ShowProfileView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Spacing="0" BackgroundColor="#2c3e50" Padding="0,0,0,5">
+
+            <StackLayout Padding="0,60,0,0">
+                <Grid HorizontalOptions="Fill"
+              VerticalOptions="Center" Padding="0" ColumnSpacing="-30">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="3"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="50"/>
+
+
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.60*"/>
+                        <ColumnDefinition Width="0.90*"/>
+                        <ColumnDefinition Width="0.60*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--  <BoxView  
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Start"
+                               HeightRequest="3"
+                               Color="Black" 
+                               Grid.Row="0"
+                               Grid.Column="0" 
+                              Grid.ColumnSpan="3"/>
+-->
+                    <!--  <Image Source="horizontalline.png" HeightRequest="0.5" HorizontalOptions="FillAndExpand" Grid.Row="0"
+                         Grid.Column="0"></Image>-->
+                    <StackLayout  Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="1" BackgroundColor="#607D8B"
+                                  Padding="0" Margin="0"></StackLayout>
+                    <Frame BackgroundColor="#607D8B" WidthRequest="160" HeightRequest="160"
+                       IsClippedToBounds="True" CornerRadius="100" Grid.Column="1" Grid.Row="0"
+                       Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center"
+                       Padding="3">
+                        <Frame BackgroundColor="#424242" IsClippedToBounds="True" CornerRadius="100" Padding="0">
+                            <Image Source="userprofile.jpg" Aspect="Fill" x:Name="RelativeImage">
+                                
+                            </Image>
+
+                        </Frame>
+
+                    </Frame>
+                    <Frame Grid.Column="1" Grid.Row="2" CornerRadius="100" IsClippedToBounds="True" Padding="5" BackgroundColor="#f0f5f5"
+                        HeightRequest="25" WidthRequest="25" HorizontalOptions="End" VerticalOptions="Center">
+                        <Image Source="camera.png" Aspect="AspectFit" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="EditUserIcon_Tabbed" CommandParameter="{Binding .}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+                    <StackLayout  Grid.Row="3" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Start">
+                        <Label x:Name="RelativeName" FontSize="20" TextColor="#84C5CB"></Label>
+
+                    </StackLayout>
+
+
+
+
+
+                </Grid>
+            </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <Frame Padding="0" BackgroundColor="#607D8B" HorizontalOptions="CenterAndExpand" WidthRequest="340" HeightRequest="30" CornerRadius="20">
+                        <StackLayout Orientation="Horizontal" Padding="5,0,15,0" >
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="UserChoicesIcon_Tapped"/>
+                            </StackLayout.GestureRecognizers>
+
+                            <Image Source="Down.png"  WidthRequest="20" HeightRequest="20" Rotation="90" HorizontalOptions="StartAndExpand">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="DownArrowIcon_Tabbed" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="إختياراتك" HorizontalOptions="Start"
+                       FontSize="14" TextColor="white" VerticalOptions="Start"
+                                   FontFamily="{StaticResource AppFont}"/>
+
+
+
+
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout Padding="0,0,0,0" Orientation="Vertical" Spacing="0">
+                        <Label Text="نصيحة اليوم : " TextColor="#95a5a6"
+                           FontFamily="{StaticResource AppFont}"
+                           FontSize="16"
+                           Padding="15"/>
+                        <Frame Padding="0" HorizontalOptions="CenterAndExpand" BackgroundColor="#607D8B" CornerRadius="20" WidthRequest="340"  HeightRequest="30">
+                            <Label Text="نصيحه" HorizontalOptions="End" VerticalOptions="Center"
+                                   FontSize="14" Padding="0,0,15,0"
+                                     FontFamily="{StaticResource AppFont}"
+                                   TextColor="White"></Label>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout Padding="0,30,0,0"  Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="340" >
+                        <Image Source="leftarrow.png" 
+                                WidthRequest="20" HeightRequest="20">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="LeftArrowIcon_Tabbed"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Frame CornerRadius="30" HasShadow="True" HeightRequest="100" WidthRequest="350" BackgroundColor="#607D8B">
+                            <ScrollView Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <StackLayout  Orientation="Vertical" Spacing="15">
+                                        <Label Text="صفه 1" FontSize="20" FontFamily="{StaticResource AppFont}" TextColor="White"></Label>
+                                        <Label Text="صفه 2 " FontSize="20" FontFamily="{StaticResource AppFont}" TextColor="White"></Label>
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </ScrollView>
+                        </Frame>
+                        <Image Source="rightarrow.png" 
+                        WidthRequest="20" HeightRequest="20" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="RightArrowIcon_Tabbed"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+            <StackLayout  Margin="25" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" >
+                <Label Text="أزاله  الحـسـاب " Style="{StaticResource MenuLabels}"/>
+                <Frame  IsClippedToBounds="True" BackgroundColor="#2c3e50" BorderColor="Red" Style="{StaticResource QuizFrame}">
+                    <Image Source="bin.png" HeightRequest="23" WidthRequest="23" />
+                </Frame>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Delete_Relative"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

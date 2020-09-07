@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Pages:PopupPage
+    xmlns:Pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Analysis.Views.OrganPopupPage">
+
+    <ContentPage.Content>
+        <Frame CornerRadius="10" Margin="20" VerticalOptions="StartAndExpand" HeightRequest="200" WidthRequest="190" HorizontalOptions="Center">
+            <StackLayout >
+                <StackLayout Orientation="Horizontal" Margin="10">
+                <StackLayout  BindableLayout.ItemsSource="{Binding PopupContent}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding PopupIcon}" HeightRequest="50" WidthRequest="50" />
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+
+                <StackLayout  BindableLayout.ItemsSource="{Binding PopupContent}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding PopupLabel}" HorizontalOptions="Center" />
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+                </StackLayout>
+                <ListView ItemsSource="{Binding PopupItems}" HorizontalOptions="Center">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                                    <Image Source="{Binding Image}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="30" WidthRequest="40"/>
+                                    <Label Text="{Binding Desc}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+
+</Pages:PopupPage>

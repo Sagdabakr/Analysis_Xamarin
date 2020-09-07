@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Analysis.Views.HomePage"
+             BackgroundColor="#2c3e50"
+             NavigationPage.HasNavigationBar="False">
+  <ContentPage.Content>
+        
+        <StackLayout >
+            <!--Menu Icon-->
+           
+            <StackLayout VerticalOptions="Start" Margin="5" >
+                <Image Margin="10" x:Name="MenuIcon" Source="menu.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="End">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Menu_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <!--User Bar-->
+            <StackLayout x:Name="MainQuizIcons">
+            <StackLayout Margin="0,10,35,0" Orientation="Horizontal" HorizontalOptions="End">
+                <StackLayout HorizontalOptions="End" Margin="0,10,10,10" Spacing="0">
+                    <Label x:Name="HomeUserName" VerticalOptions="CenterAndExpand" Style="{StaticResource MenuLabels}" HorizontalOptions="End"/>
+                    <Label Text="برجاء تكمله الاختبار لعرض النتيجه" VerticalOptions="CenterAndExpand" Style="{StaticResource MenuLabels}"/>
+                </StackLayout>
+
+                    <Frame Padding="0" CornerRadius="50" VerticalOptions="Center" HorizontalOptions="End" IsClippedToBounds="True">
+                        <Image x:Name="HomeUserIcon" WidthRequest="90" HeightRequest="90" Aspect="Fill"/>
+                    </Frame>
+            </StackLayout>
+                
+                <!--Quiz Grid-->
+            <Grid Margin="0,20,0,0"  HorizontalOptions="FillAndExpand" RowSpacing="20" VerticalOptions="Center" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="Center" Grid.RowSpan="2" VerticalOptions="Center" Style="{StaticResource QuizFrame}">
+                    <Image Source="eye.png" WidthRequest="40" HeightRequest="40" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OrgansList_Tapped" CommandParameter="2"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Image Source="check.png" WidthRequest="20" HeightRequest="20" IsVisible="False"
+                       Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Start"/>
+
+                <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Style="{StaticResource QuizFrame}">
+                    <Image Source="chin.png" WidthRequest="40" HeightRequest="40" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OrgansList_Tapped" CommandParameter="6"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Image Source="check.png" WidthRequest="20" HeightRequest="20"
+                       Grid.Row="1" Grid.Column="1" VerticalOptions="End" HorizontalOptions="Start"/>
+
+                <Frame Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="Center" Style="{StaticResource QuizFrame}">
+                    <Image Source="nose.png" WidthRequest="40" HeightRequest="40" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OrgansList_Tapped" CommandParameter="3"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Image Source="check.png" WidthRequest="20" HeightRequest="20" IsVisible="False"
+                       Grid.Row="1" Grid.Column="3" VerticalOptions="End" HorizontalOptions="Start"/>
+
+                <Frame Grid.Row="2" Grid.Column="0"  HorizontalOptions="Center" Style="{StaticResource QuizFrame}">
+                    <Image Source="ear.png" WidthRequest="40" HeightRequest="40" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OrgansList_Tapped" CommandParameter="3"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Image Source="check.png" WidthRequest="20" HeightRequest="20" IsVisible="False"
+                       Grid.Row="2" Grid.Column="0" VerticalOptions="End" HorizontalOptions="End" Margin="15,2"/>
+
+                <Frame Grid.Row="2" Grid.Column="3"  HorizontalOptions="Center" Style="{StaticResource QuizFrame}">
+                    <Image Source="palm.png" WidthRequest="40" HeightRequest="40" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OrgansList_Tapped" CommandParameter="2"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Image Source="check.png" WidthRequest="20" HeightRequest="20"
+                       Grid.Row="2" Grid.Column="3"  VerticalOptions="End" HorizontalOptions="End" Margin="15,2"/>
+
+                <Frame Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" Style="{StaticResource QuizFrame}">
+                    <Image Source="lips.png" WidthRequest="40" HeightRequest="40">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OrgansList_Tapped" CommandParameter="7"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Image Source="check.png" WidthRequest="20" HeightRequest="20"
+                       Grid.Row="3" Grid.Column="1" VerticalOptions="End" HorizontalOptions="Start"/>
+
+                <Frame Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="Center" Style="{StaticResource QuizFrame}">
+                    <Image Source="hair.png" WidthRequest="40" HeightRequest="40" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OrgansList_Tapped" CommandParameter="4"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Image Source="check.png" WidthRequest="20" HeightRequest="20"
+                       Grid.Row="3" Grid.Column="3" VerticalOptions="End" HorizontalOptions="Start"/>
+
+                <Frame Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="Center" Grid.RowSpan="2" Style="{StaticResource QuizFrame}">
+                    <Image Source="eyebrow.png" WidthRequest="40" HeightRequest="40">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OrgansList_Tapped" CommandParameter="5"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                    <Image Source="check.png" WidthRequest="20" HeightRequest="20"
+                       Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Start"/>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout x:Name="QuizOptions" Margin="8" HorizontalOptions="FillAndExpand" VerticalOptions="Start" IsVisible="False">
+                <!--quiz labsels-->
+                <StackLayout Spacing="25" Orientation="Horizontal" HorizontalOptions="End"  Margin="15">
+                    
+                    <StackLayout VerticalOptions="Center"  BindableLayout.ItemsSource="{Binding PopupContent}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding PopupLabel}" HorizontalOptions="Center" Style="{StaticResource MenuLabels}" FontSize="28" />
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                    
+                    <Frame Style="{StaticResource QuizFrame}">
+                        <Image x:Name="SelectedOrgan" HeightRequest="40" WidthRequest="40" />
+                    </Frame>
+                    
+                </StackLayout>
+                <!--quiz options-->
+                <ListView Margin="30,5" SeparatorVisibility="None" 
+                          ItemsSource="{Binding Organs}" HorizontalOptions="Center" 
+                          ItemTapped="ListView_ItemTapped" x:Name="ListViewTest">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame HasShadow="False" Padding="0" BorderColor="#95a5a6" Margin="3" CornerRadius="20"  HorizontalOptions="Fill" >
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" >
+                                        <Label Text="{Binding Shape}"  Style="{StaticResource QuizLabels}" />
+                                        <Image Source="{Binding Image}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="30" WidthRequest="40"/>
+                                </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+         
+         <!--Footer ADs-->
+            <StackLayout VerticalOptions="EndAndExpand" Margin="5,15"  HorizontalOptions="FillAndExpand">
+                <Frame CornerRadius="10" Padding="0"  IsClippedToBounds="True">
+                    <Image Source="AD.png" HeightRequest="45" Aspect="AspectFill"/>
+                </Frame>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+   
+</ContentPage>

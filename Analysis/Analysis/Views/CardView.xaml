@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Analysis.Views.CardView">
+  <ContentView.Content>
+     
+
+<Frame IsClippedToBounds="True"
+       HasShadow="True"
+       Padding="0"
+       CornerRadius="40"
+       BackgroundColor="#2c3e50" >
+    <Frame.Margin>
+        <OnPlatform x:TypeArguments="Thickness"
+Android="10"
+iOS="10"/>
+    </Frame.Margin>
+    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+        <BoxView Color="{Binding color}" WidthRequest="0" />
+
+                <Frame HorizontalOptions="FillAndExpand" Margin="0,0,0,0" HasShadow="False" CornerRadius="40"  BackgroundColor="#95a5a6">
+            <Grid VerticalOptions="CenterAndExpand" Padding="-20" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Row="0" Grid.Column="0" >
+                            <Frame BackgroundColor="#2c3e50">
+                                <Image  Source="UserIcon.png" HeightRequest="40" />
+                    </Frame>
+                </StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="1"  Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Padding="20">
+
+                                <Label Text="شكل العين" FontSize="Body" TextColor="#2c3e50" FontFamily="{StaticResource AppFont}" />
+                    </StackLayout>
+                  <!--  <StackLayout Orientation="Horizontal">
+                        <Label Text="Age :"/>
+                        <Label Text=" employee_age"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Salary :"/>
+                        <Label Text=" employee_salary"/>
+                    </StackLayout>-->
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </StackLayout>
+           
+        </Frame>
+    </ContentView.Content>
+</ContentView>

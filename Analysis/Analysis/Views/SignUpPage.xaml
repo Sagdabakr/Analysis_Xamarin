@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Analysis.Views.SignUpPage"
+            BackgroundColor="#2c3e50" 
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Menu Icon-->
+            <StackLayout VerticalOptions="Start" Margin="5" >
+                <Image Margin="10" x:Name="MenuIcon" Source="menu.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="End">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Menu_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+      
+        <StackLayout Margin="2" WidthRequest="260" VerticalOptions="End" >
+
+
+           
+            <ScrollView>
+                <StackLayout BackgroundColor="#2c3e50"  Padding="30">
+                    <StackLayout>
+                        <StackLayout>
+                            <Grid HorizontalOptions="Fill" 
+                            VerticalOptions="Center" Padding="0" ColumnSpacing="-30">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="80"/>
+                                    <RowDefinition Height="30"/>
+
+
+
+
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.60*"/>
+                                    <ColumnDefinition Width="0.90*"/>
+                                    <ColumnDefinition Width="0.60*"/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <StackLayout BackgroundColor="#2c3e50" IsClippedToBounds="True" 
+                                       Padding="0" Grid.Column="1" Grid.Row="0"
+                                        Grid.RowSpan="3">
+                                        <Image Source="userprofile.jpg"  HeightRequest="100" WidthRequest="100" x:Name="image">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="AddUserPhoto_Tapped" CommandParameter="{Binding .}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+
+                                </StackLayout>
+
+                                <Frame Grid.Column="1" Grid.Row="0" CornerRadius="100" IsClippedToBounds="True" Padding="5" BackgroundColor="#f0f5f5"
+                        HeightRequest="25" WidthRequest="25" HorizontalOptions="End" VerticalOptions="End">
+                                    <Image Source="camera.png" Aspect="AspectFit" >
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="EditIcon_Tabbed" CommandParameter="{Binding .}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Frame>
+
+
+
+
+                            </Grid>
+                        </StackLayout>
+                        <!--  <StackLayout BackgroundColor="#2c3e50"  Padding="0">
+                        <Image Source="userprofile.jpg" HeightRequest="100" WidthRequest="100">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AddUserPhoto_Tapped" CommandParameter="{Binding .}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                    </StackLayout>-->
+                    <Frame Style="{StaticResource SignupFrame}" x:Name="NameFrame">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="UserName" Placeholder="الأسـم" Style="{StaticResource FormsEntry}"/>
+                            <Image Source="edit.png" Style="{StaticResource FormIcon}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Style="{StaticResource SignupFrame}" x:Name="EmailFrame">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="UserEmail" Keyboard="Email" Placeholder="البريد الإلكتروني" Style="{StaticResource FormsEntry}"  />
+                            <Image Source="at.png" Style="{StaticResource FormIcon}" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame Style="{StaticResource SignupFrame}" x:Name="PhoneFrame">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="UserPhone" Keyboard="Numeric" Placeholder="الموبايل" Style="{StaticResource FormsEntry}" />
+                            <Image Source="smartphone.png" Style="{StaticResource FormIcon}" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame Style="{StaticResource SignupFrame}" x:Name="PasswordFrame">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry x:Name="UserPassword" Placeholder="كلمة السر" Style="{StaticResource FormsEntry}" IsPassword="True" FlowDirection="RightToLeft"/>
+                            <Image Source="lock.png" Style="{StaticResource FormIcon}" />
+                        </StackLayout>
+                    </Frame>
+                          
+                                <StackLayout Margin="0,30,0,0">
+                                    <Button Text="إنشاء حساب"  Clicked="SignUp_Btn_Clicked" Style="{StaticResource FormsButton}"/>
+                                    <Label Text="لديك حساب بالفعل.." FontSize="16" TextColor="#95a5a6"/>
+                                    <Button Text="تسجيل الدخول"  Clicked="Login_Btn_Clicked" Style="{StaticResource FormsButton}"/>
+                                </StackLayout>
+                       
+                        </StackLayout>
+                </StackLayout>
+        
+        </ScrollView>
+
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

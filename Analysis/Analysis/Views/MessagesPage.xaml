@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Analysis.Views.MessagesPage"
+             BackgroundColor="#2c3e50"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Menu Icon-->
+
+            <StackLayout VerticalOptions="Start" Margin="5" >
+                <Image Margin="10" x:Name="MenuIcon" Source="menu.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="End">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Menu_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            
+            <!--Tabbed Page-->
+            <Frame Margin="10" HorizontalOptions="CenterAndExpand" Padding="5,7" BackgroundColor="#2c3e50" BorderColor="#2c3e50" HasShadow="False" >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="2" Spacing="25">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                        <Label Text="الـمفـضلـه" Style="{StaticResource MenuLabels}"  FontSize="20" x:Name="FavTitle" />
+                        <Image Source="star.png" VerticalOptions="Center" WidthRequest="25" HeightRequest="25" x:Name="FavIcon"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Fav_Tabbed"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
+                        <Label Text="الأشـعـارات" Style="{StaticResource MenuLabels}" x:Name="RingTitle" TextColor="#84C5CB" FontSize="20"/>
+                        <Image Source="bell.png" VerticalOptions="Center" WidthRequest="25" HeightRequest="25" x:Name="RingIcon"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Ring_Tabbed"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <!--Messages List View-->
+            <ListView ItemsSource="{Binding Messages}" HasUnevenRows="True" SeparatorVisibility="None" x:Name="ListviewIcon"
+               SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="10,5" >
+                            
+                                <Frame CornerRadius="30" BackgroundColor="#607D8B" HorizontalOptions="FillAndExpand" Padding="20,10">
+                                    <StackLayout >
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                            <Image Source="{Binding StarImageSource}"  HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" VerticalOptions="Center">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="Star_Tapped" CommandParameter="{Binding .}" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                         
+
+                                            <Label TextColor="#95a5a6" Text="{Binding DateTime}" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  FontAttributes="Bold"/>
+                                        </StackLayout>
+                                        <ScrollView >
+                                            <StackLayout Margin="9,0">
+                                                <Label Text="{Binding MessageBody}" FontSize="14" VerticalOptions="Center" Style="{StaticResource QuizLabels}" HorizontalOptions="End"/>
+                                            </StackLayout>
+                                        </ScrollView>
+                                    </StackLayout>
+                                </Frame>
+                                <Image Source="tack.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start"/>
+                               
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

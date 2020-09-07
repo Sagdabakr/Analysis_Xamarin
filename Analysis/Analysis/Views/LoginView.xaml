@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pages:PopupPage
+    xmlns:Pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Analysis.Views.LoginView"
+   >
+    <ContentPage.Content>
+        <Frame CornerRadius="40" BackgroundColor="#607D8B" HorizontalOptions="Center" Margin="25" WidthRequest="270" HeightRequest="400" VerticalOptions="Center" Padding="5">
+            <StackLayout>
+            <StackLayout  VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Padding="0,15,0,0" >
+                <Label Text="تسجيل الدخول " TextColor="White" FontSize="22"
+                          FontFamily="{StaticResource AppFont}"></Label>
+            </StackLayout>
+            <StackLayout VerticalOptions="End" Margin="15">
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="UserEmail" Placeholder="البريد الإلكتروني" Keyboard="Email" Style="{StaticResource FormsEntry}" />
+                    <Image Source="at.png" Style="{StaticResource FormIcon}" />
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="UserPassword" Placeholder="كلمة السر" Style="{StaticResource FormsEntry}" IsPassword="True" />
+                    <Image Source="lock.png" Style="{StaticResource FormIcon}" />
+                </StackLayout>
+            </StackLayout>
+
+                <StackLayout Margin="10,30,10,0"  Orientation="Horizontal" HorizontalOptions="End" Spacing="25">
+                    <Frame BackgroundColor="#3B5999" WidthRequest="30" HeightRequest="30" Padding="2" HorizontalOptions="Start" CornerRadius="40">
+                    <Image Source="facebook.png" Aspect="Fill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="LoginFaceBook_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    </Frame>
+                    
+                    <Button Text="تسجيل الدخول" FontSize="14"  HorizontalOptions="EndAndExpand" Clicked="Login_Btn_Clicked" Style="{StaticResource FormsButton}"/>
+                    
+                </StackLayout>
+                <StackLayout Margin="15" Spacing="19" >
+                    <Label Text="ليس لديك حساب .." FontSize="16" TextColor="#95a5a6"/>
+                    <Button Text="إنشاء حساب جديد"  Clicked="SignUp_Btn_Clicked" Style="{StaticResource FormsButton}"/>
+                </StackLayout>
+                </StackLayout>
+
+            
+           
+        </Frame>
+    </ContentPage.Content>
+</Pages:PopupPage>

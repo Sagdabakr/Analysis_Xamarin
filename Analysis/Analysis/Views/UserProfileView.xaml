@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Analysis.Views"
+             xmlns:cards="http://xamarin.com/schemas/2014/forms"
+             xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
+             xmlns:cards1="clr-namespace:PanCardView;assembly=PanCardView"
+             xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView"
+             xmlns:viewModels="clr-namespace:Analysis.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Analysis.Views.UserProfileView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+    
+      <StackLayout Spacing="0" BackgroundColor="#2c3e50">
+                <StackLayout VerticalOptions="Start" Margin="5" >
+                    <Image Margin="10" x:Name="MenuIcon" Source="menu.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="End">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Menu_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                <StackLayout Padding="0,30,0,0" >
+                <Grid HorizontalOptions="Fill"
+              VerticalOptions="Center" Padding="0" ColumnSpacing="-30">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="3"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="50"/>
+                     
+                        
+                       
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.60*"/>
+                        <ColumnDefinition Width="0.90*"/>
+                        <ColumnDefinition Width="0.60*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--  <BoxView  
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Start"
+                               HeightRequest="3"
+                               Color="Black" 
+                               Grid.Row="0"
+                               Grid.Column="0" 
+                              Grid.ColumnSpan="3"/>
+-->
+                    <!--  <Image Source="horizontalline.png" HeightRequest="0.5" HorizontalOptions="FillAndExpand" Grid.Row="0"
+                         Grid.Column="0"></Image>-->
+                    <StackLayout  Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="1" BackgroundColor="#607D8B"
+                                  Padding="0" Margin="0"></StackLayout>
+                    <Frame BackgroundColor="#607D8B" WidthRequest="160" HeightRequest="160"
+                       IsClippedToBounds="True" CornerRadius="100" Grid.Column="1" Grid.Row="0"
+                       Grid.RowSpan="3" HorizontalOptions="Center" VerticalOptions="Center"
+                       Padding="3">
+                        <Frame BackgroundColor="#424242" IsClippedToBounds="True" CornerRadius="100" Padding="0">
+                            <Image Source="userprofile.jgp" x:Name="UserImage" Aspect="AspectFill"/> 
+                        </Frame>
+                      
+                    </Frame>
+                    <Frame  Grid.Column="1" Grid.Row="2" CornerRadius="100" IsClippedToBounds="True" Padding="5" BackgroundColor="#f0f5f5"
+                        HeightRequest="25" WidthRequest="25" HorizontalOptions="End" VerticalOptions="Center">
+                    <Image Source="camera.png" Aspect="Fill" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="EditIcon_Tabbed" CommandParameter="{Binding .}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    </Frame>
+                    <StackLayout  Grid.Row="3" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Start">
+                        <Label FontSize="20" TextColor="#84C5CB" x:Name="UserName"></Label>
+                    </StackLayout>
+
+
+                  <!--  <StackLayout Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End" Spacing="-10">
+                        <StackLayout HorizontalOptions="End" VerticalOptions="End">
+                            <Label Text="إختياراتك" 
+                       FontSize="16" TextColor="#95a5a6"
+                                   FontFamily="{StaticResource AppFont}"/>
+                        </StackLayout>
+                        <StackLayout  VerticalOptions="Center" Padding="10,5,5,0">
+                            <Image Source="Down.png" VerticalOptions="End" WidthRequest="20" HeightRequest="20">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="DownArrow_Tabbed" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+                        
+                    </StackLayout>
+                    -->
+    
+
+                </Grid>
+            </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <!--   <StackLayout Orientation="Horizontal" Padding="15" HorizontalOptions="End" Spacing="15">
+
+               <StackLayout>
+
+                    <Image Source="restart.png"  WidthRequest="20" HeightRequest="20" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </StackLayout>
+                <StackLayout >
+
+                    <Image Source="start.png"  WidthRequest="20" HeightRequest="20" HorizontalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </StackLayout>
+            </StackLayout>-->
+                    <Frame Padding="0" BackgroundColor="#607D8B" HorizontalOptions="CenterAndExpand" WidthRequest="340" HeightRequest="30" CornerRadius="20">
+                <StackLayout Orientation="Horizontal" Padding="5,0,15,0" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Choices_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+
+                    <Image Source="Down.png"  WidthRequest="20" HeightRequest="20" Rotation="90" HorizontalOptions="StartAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="DownArrow_Tabbed" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="إختياراتك" HorizontalOptions="Start"
+                       FontSize="14" TextColor="white" VerticalOptions="Start"
+                                   FontFamily="{StaticResource AppFont}"/>
+
+
+
+
+                </StackLayout>
+            </Frame>
+           
+            <StackLayout Padding="0,30,0,0" Orientation="Vertical" Spacing="0">
+
+                        <StackLayout Margin="15,5" Orientation="Horizontal" HorizontalOptions="End" Padding="0" >
+                        <Label Text="نصيحة اليوم : " Style="{StaticResource MenuLabels}"/>
+                        <Image Source="lamp.png" HeightRequest="30" WidthRequest="30" />
+                        </StackLayout>
+                
+                        <Frame Padding="0" Margin="0,5" HorizontalOptions="CenterAndExpand" BackgroundColor="#607D8B" CornerRadius="20" WidthRequest="340"  HeightRequest="30">
+                            <Label Text="{Binding LblTextMsg}" HorizontalOptions="End" VerticalOptions="Center" Padding="0,0,15,0"
+                                    Style="{StaticResource MenuLabels}" TextColor="White"></Label>
+                        </Frame>
+                    </StackLayout>
+
+       
+          
+                <StackLayout Padding="0,30,0,0">
+
+                        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="340" >
+                            <Image Source="leftarrow.png" x:Name="LeftArrow"
+                                WidthRequest="20" HeightRequest="20">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="LeftArrow_Tabbed"
+                                                          CommandParameter="{Binding .}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Frame CornerRadius="30" HasShadow="True" HeightRequest="100"
+                                   WidthRequest="350" BackgroundColor="#607D8B"
+                                   >
+                               
+                                        <ScrollView Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center"
+                                                 x:Name="framev">
+
+                                        <Label Text="{Binding LblText}" TextColor="#FFF"/>
+                                    </StackLayout>
+                                </ScrollView>
+                          
+                            </Frame>
+                            <Image Source="rightarrow.png" x:Name="RightArrow"
+                        WidthRequest="20" HeightRequest="20" >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="rightArrow_Tabbed"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </StackLayout>
+
+
+
+
+ <StackLayout Padding="0" >
+                            
+        <StackLayout Margin="15,5" Orientation="Horizontal" HorizontalOptions="End">        
+            <Label Text="أشخاص قمت بإضافتهم" HorizontalOptions="Start" Style="{StaticResource MenuLabels}"/>
+            <Image Source="group.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start"/>
+        </StackLayout>
+
+                            <cards1:CoverFlowView  
+                                PositionShiftValue="145" IsCyclical="false" ItemsSource="{Binding Relatives}" 
+                                 >
+
+                                <x:Arguments>
+
+                                    <proc:BaseCoverFlowFrontViewProcessor ScaleFactor="0.75" OpacityFactor="0.25" />
+
+                                    <proc:BaseCoverFlowBackViewProcessor  ScaleFactor="0.75" OpacityFactor="0.25" />
+
+                                </x:Arguments>  
+                                <cards1:CoverFlowView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame VerticalOptions="Center" HorizontalOptions="Center"  HasShadow="false" IsClippedToBounds="true" CornerRadius="16" WidthRequest="70" HeightRequest="100" BackgroundColor="#607D8B">
+                                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" >
+                                                <Frame Style="{StaticResource QuizFrame}" IsClippedToBounds="True" Padding="0">
+                                                <Image  Source="{Binding Image}"  Aspect="Fill" HeightRequest="70" WidthRequest="70"  />
+                                                </Frame>
+                                                <Label Text="{Binding Name}"  HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource MenuLabels}" TextColor="White"></Label>
+                   
+                                            </StackLayout>
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="Relative_Tabbed" CommandParameter="{Binding .}"/>
+                                            </Frame.GestureRecognizers>
+                                        </Frame>
+                                    </DataTemplate>
+                                    </cards1:CoverFlowView.ItemTemplate>
+                                </cards1:CoverFlowView>
+      <StackLayout Margin="25" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" >
+                            <Label Text="أضـافـه  حـسـاب  جـد يـد" Style="{StaticResource MenuLabels}"/>
+                            <Image Source="plus.png" HeightRequest="30" WidthRequest="30" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AddRelative_Tapped"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+</StackLayout>
+
+              
+                
+                </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            
+           
+        </StackLayout>
+      
+    </ContentPage.Content>
+</ContentPage>

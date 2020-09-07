@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Analysis.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="AppFont">
+                <On Platform="Android" Value="ubuntu.ttf#ubuntu" />
+            </OnPlatform>
+            <Style TargetType="Image" x:Key="FormIcon" >
+                <Setter Property="WidthRequest" Value="20"/>
+                <Setter Property="HeightRequest" Value="20"/>
+            </Style>
+            <Style TargetType="Button" x:Key="FormsButton">
+                <Setter Property="BackgroundColor" Value="#84C5CB"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="FontFamily" Value="{StaticResource AppFont}"/>
+                <Setter Property="TextColor" Value="#2c3e50"/>
+                <Setter Property="FontSize" Value="14"/>
+            </Style>
+            <!--Main Menu Labels-->
+            <Style TargetType="Label" x:Key="MenuLabels">
+                <Setter Property="FontFamily" Value="{StaticResource AppFont}"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="TextColor" Value="#95a5a6"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            <!--Quiz Options Labels-->
+            <Style TargetType="Label" x:Key="QuizLabels">
+                <Setter Property="FontFamily" Value="{StaticResource AppFont}"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="TextColor" Value="#2c3e50"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            <!--Quiz Round Frames-->
+            <Style TargetType="Frame" x:Key="QuizFrame">
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="BorderColor" Value="#95a5a6"/>
+                <Setter Property="CornerRadius" Value="40"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            <!--SignUp Frames-->
+            <Style TargetType="Frame" x:Key="SignupFrame">
+                <Setter Property="Padding" Value="20,3"/>
+                <Setter Property="BorderColor" Value="#2c3e50"/>
+                <Setter Property="CornerRadius" Value="35"/>
+                <Setter Property="BackgroundColor" Value="#2c3e50"/>
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="Margin" Value="2"/>
+            </Style>
+            <!-- Forms Entries -->
+            <Style TargetType="Entry" x:Key="FormsEntry">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="PlaceholderColor" Value="#95a5a6"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
