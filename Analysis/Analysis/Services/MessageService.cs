@@ -30,11 +30,6 @@ namespace Analysis.Services
             return usermsg;
         }
 
-
-
-
-
-
         public async Task<UserChoice> PutUserChoice(UserFavMsgModel userFavMsgModel)
 
         {

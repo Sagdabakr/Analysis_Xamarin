@@ -2179,24 +2179,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hp 255\\.nuget\\packages\\": {},
+    "C:\\Users\\Twins\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\analysis\\Analysis\\Analysis\\Analysis.iOS\\Analysis.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Twins\\Downloads\\Analysis\\Analysis\\Analysis\\Analysis.iOS\\Analysis.iOS.csproj",
       "projectName": "Analysis.iOS",
-      "projectPath": "G:\\analysis\\Analysis\\Analysis\\Analysis.iOS\\Analysis.iOS.csproj",
-      "packagesPath": "C:\\Users\\hp 255\\.nuget\\packages\\",
-      "outputPath": "G:\\analysis\\Analysis\\Analysis\\Analysis.iOS\\obj\\",
+      "projectPath": "C:\\Users\\Twins\\Downloads\\Analysis\\Analysis\\Analysis\\Analysis.iOS\\Analysis.iOS.csproj",
+      "packagesPath": "C:\\Users\\Twins\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Twins\\Downloads\\Analysis\\Analysis\\Analysis\\Analysis.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\hp 255\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Twins\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2204,14 +2207,16 @@
         "xamarinios10"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.devexpress.com/FX9XMCaMFwh8Bq1MdQqfhWutlbTlgP9JbI2eynh43fzslF7ali/api": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "G:\\analysis\\Analysis\\Analysis\\Analysis\\Analysis.csproj": {
-              "projectPath": "G:\\analysis\\Analysis\\Analysis\\Analysis\\Analysis.csproj"
+            "C:\\Users\\Twins\\Downloads\\Analysis\\Analysis\\Analysis\\Analysis\\Analysis.csproj": {
+              "projectPath": "C:\\Users\\Twins\\Downloads\\Analysis\\Analysis\\Analysis\\Analysis\\Analysis.csproj"
             }
           }
         }

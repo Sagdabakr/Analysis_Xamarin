@@ -77,3 +77,14 @@ G:\analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\XamlC.stamp
 G:\analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\Analysis.iOS.csproj.CopyComplete
 G:\analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\Analysis.iOS.exe
 G:\analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\Analysis.iOS.pdb
+C:\Users\Twins\Downloads\Analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\build-signature\signature
+C:\Users\Twins\Downloads\Analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\Twins\Downloads\Analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+C:\Users\Twins\Downloads\Analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\Twins\Downloads\Analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
+C:\Users\Twins\Downloads\Analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\Twins\Downloads\Analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\optimized\
+C:\Users\Twins\Downloads\Analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\Analysis.iOS.csprojAssemblyReference.cache
+C:\Users\Twins\Downloads\Analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\Analysis.iOS.csproj.CoreCompileInputs.cache
+C:\Users\Twins\Downloads\Analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\Analysis.iOS.exe
+C:\Users\Twins\Downloads\Analysis\Analysis\Analysis\Analysis.iOS\obj\iPhoneSimulator\Debug\Analysis.iOS.pdb
